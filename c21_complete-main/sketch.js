@@ -1,6 +1,4 @@
-const Engine = Matter.Engine;
-const World = Matter.World;
-const Bodies = Matter.Bodies;
+//inicialize as constantes da biblioteca
 
 let engine;
 let world;
@@ -29,17 +27,10 @@ function setup() {
   btn2.size(50,50);
   btn2.mouseClicked(vForce);
   
-  ground =new Ground(200,390,400,20);
-  right = new Ground(390,200,20,400);
-  left = new Ground(10,200,20,400);
-  top_wall = new Ground(200,10,400,20);
+ //crie os quatro chãos
 
-  var ball_options = {
-    restitution: 0.95
-  }
+  //crie os mecanismos físicos da bola e a adicione ao mundo
 
-  ball = Bodies.circle(200,100,20,ball_options);
-  World.add(world,ball);
   
   rectMode(CENTER);
   ellipseMode(RADIUS);
@@ -49,12 +40,8 @@ function draw()
 {
   background(51);
 
-  ellipse(ball.position.x,ball.position.y,20);
-
-  ground.show();
-  top_wall.show();
-  left.show();
-  right.show();
+  //exiba os chãos
+  //exiba a bola
   Engine.update(engine);
 }
 
